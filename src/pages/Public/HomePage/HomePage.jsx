@@ -73,9 +73,9 @@ class HomePage extends Component {
 							</Col>
 						</Row>
 					</section>
-					<section>
+					{/* <section>
 						<MovieBanner />
-					</section>
+					</section> */}
 					<ListMovies />
 				</div>
 			</div>
