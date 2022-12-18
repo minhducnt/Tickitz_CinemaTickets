@@ -98,7 +98,8 @@ class MoviePanel extends Component {
 
 	renderMovies() {
 		const { classes } = this.props;
-		const { isAll, isComing, isDisplaying, isShowing } = this.state;
+		const { isAll, isDisplaying } = this.state;
+		//const {isComing ,isShowing } = this.state;
 		const movies = match(this.state.search, this.props.movie.movies, 'name');
 		const display = match(
 			this.state.search,
@@ -115,20 +116,20 @@ class MoviePanel extends Component {
 		// 	this.props.movie.nowShowing,
 		// 	'name'
 		// );
-		// if (!movies.length) {
-		// 	return (
-		// 		<div className={classes.progressWrapper}>
-		// 			<CircularProgress />
-		// 		</div>
-		// 	);
-		// }
-		// if (!display.length) {
-		// 	return (
-		// 		<div className={classes.progressWrapper}>
-		// 			<CircularProgress />
-		// 		</div>
-		// 	);
-		// }
+		if (!movies.length) {
+			return (
+				<div className={classes.progressWrapper}>
+					<CircularProgress />
+				</div>
+			);
+		}
+		if (!display.length) {
+			return (
+				<div className={classes.progressWrapper}>
+					<CircularProgress />
+				</div>
+			);
+		}
 		// if (!coming.length) {
 		// 	return (
 		// 		<div className={classes.progressWrapper}>
