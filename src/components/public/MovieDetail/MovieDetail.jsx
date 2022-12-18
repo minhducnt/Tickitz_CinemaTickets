@@ -7,18 +7,21 @@ import { withRouter } from 'react-router-dom';
 import Moment from 'react-moment';
 import { Datepicker } from '@meinefinsternis/react-horizontal-date-picker';
 import { enUS } from 'date-fns/locale';
+
 import axiosClient from '../../../shared/apis/axiosClient';
 import { onSelectShowtime } from '../../../service/actions/showtime';
 import calendar from '../../../assets/images/calendar.svg';
 import { getMovieDetail } from '../../../service/actions/movie';
 import { createOrder } from '../../../service/actions/order';
-import DetailMyTrailer from './components/Trailer/DetailMyTrailer';
+import DetailMyTrailer from './components/DetailMyTrailer';
 import { path } from '../../../shared/constants/path';
 import {
 	formatLocaleDateString,
 	formatVNDate,
 } from '../../../shared/utils/formatDate';
 import './styles.css';
+
+import { ImageResize } from '../../common';
 
 class MovieDetailComponent extends Component {
 	constructor(props) {
@@ -91,7 +94,15 @@ class MovieDetailComponent extends Component {
 					<Col md={4} xs={12}>
 						<Card className="text-center mx-auto card-img">
 							<Card.Body>
-								<Image src={details.image} className="img-fluid" />
+								{/* <Image src={details.image} className="img-fluid" /> */}
+								<div>
+									<ImageResize
+										className="img-fluid"
+										width="240"
+										url={details.image}
+										alt="poster"
+									/>
+								</div>
 							</Card.Body>
 						</Card>
 					</Col>
@@ -99,7 +110,7 @@ class MovieDetailComponent extends Component {
 						<p className="text-display-sm-bold m-0">{details.name}</p>
 						{details.genres &&
 							details.genres?.map((item) => (
-								<Fragment key={item.id}>
+								<Fragment className="tag" key={item.id}>
 									<span>{item.name} </span>
 								</Fragment>
 							))}

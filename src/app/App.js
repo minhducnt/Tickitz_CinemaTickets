@@ -16,6 +16,7 @@ import EmailVerificationForgot from '../pages/Public/RegisterPage/EmailVerify/Em
 //Public
 import HomePage from '../pages/Public/HomePage/HomePage';
 import MoviePage from '../pages/Public/MoviePage/MoviePage';
+import MovieDetailTmdb from '../pages/Public/MovieDetail/MovieDetailTmdb';
 import MovieDetail from '../pages/Public/MovieDetail/MovieDetail';
 import OrderPage from '../pages/Public/OrderPage/OrderPage';
 import PaymentPage from '../pages/Public/PaymentPage/PaymentPage';
@@ -85,6 +86,11 @@ export default class App extends Component {
 										path={path.detail}
 										layout={MainLayout}
 										component={MovieDetail}
+									/>
+									<WithLayoutRoute
+										path={path.detailTmdb}
+										layout={MainLayout}
+										component={MovieDetailTmdb}
 									/>
 
 									<ProtectedRoute

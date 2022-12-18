@@ -39,7 +39,7 @@ class NavbarComponent extends Component {
 							<Nav.Link className="nav-link" href={path.movies}>
 								Movies
 							</Nav.Link>
-							<Nav.Link className="nav-link" href={path.ticket}>
+							<Nav.Link className="nav-link" href={path.history}>
 								Tickets
 							</Nav.Link>
 							{user?.roles?.map((item) => {

@@ -27,7 +27,7 @@ class AddMovie extends Component {
 		),
 		genres: [],
 		display: true,
-		showing: false,
+		showing: true,
 		coming: false,
 	};
 
@@ -151,8 +151,8 @@ class AddMovie extends Component {
 		const title = this.props.edit ? 'Edit Movie' : 'Add Movie';
 		const submitButton = this.props.edit ? 'Update Movie' : 'Save Details';
 		const submitAction = this.props.edit
-			? () => this.onUpdateMovie().then(() => window.location.reload())
-			: () => this.onAddMovie().then(() => window.location.reload());
+			? () => this.onUpdateMovie()
+			: () => this.onAddMovie();
 
 		return (
 			<div className={rootClassName}>

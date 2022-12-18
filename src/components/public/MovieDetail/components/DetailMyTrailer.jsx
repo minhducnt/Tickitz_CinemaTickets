@@ -7,7 +7,6 @@ const StyledDetailMyTrailer = styled.div`
 		aspect-ratio: 16/9;
 	}
 `;
-
 const DetailMyTrailer = ({ url }) => {
 	const arraySplited = url?.split('?v=');
 	const embedId = arraySplited[arraySplited?.length - 1];
@@ -24,5 +23,4 @@ const DetailMyTrailer = ({ url }) => {
 		</StyledDetailMyTrailer>
 	);
 };
-
 export default DetailMyTrailer;

@@ -10,11 +10,11 @@ export const path = {
 	home: '/',
 	movies: '/movies',
 	detail: '/movie-detail/:id',
+	detailTmdb: '/detailTmdb',
 	profile: '/profile',
 	profilePrivacy: '/profile/privacy',
 	history: '/history',
 	ticket: '/ticket',
-	article: '/article',
 	order: '/order',
 	payment: '/payment',
 	ticketResult: '/ticket-result',
@@ -33,4 +33,8 @@ export const path = {
 	showtimeAddNew: '/manage/add-showtime',
 	showtimeView: '/manage/view-showtime',
 	notFound: '*',
+	resizeImage: (url, width = '', height = '') =>
+		`https://images.weserv.nl/?url=${encodeURIComponent(
+			url
+		)}&w=${width}&h=${height}&fit=outside`,
 };

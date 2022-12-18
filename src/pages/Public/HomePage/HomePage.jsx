@@ -3,7 +3,7 @@ import { Row, Col, Image } from 'react-bootstrap';
 import { ListMovies } from '../../../components/public';
 import { login } from '../../../service/actions/auth';
 import { connect } from 'react-redux';
-import { MovieBanner, ButtonLeft } from '../../../components/common';
+import { HomeBanner, ButtonLeft } from '../../../components/common';
 import { scrollBanner } from '../../../shared/utils/utils';
 import './styles.css';
 
@@ -73,9 +73,9 @@ class HomePage extends Component {
 							</Col>
 						</Row>
 					</section>
-					{/* <section>
-						<MovieBanner />
-					</section> */}
+					<section>
+						<HomeBanner />
+					</section>
 					<ListMovies />
 				</div>
 			</div>

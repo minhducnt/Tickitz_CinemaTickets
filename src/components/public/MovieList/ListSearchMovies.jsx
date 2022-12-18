@@ -49,6 +49,9 @@ const ListSearchMovies = () => {
 		<div className="home">
 			<div className="home-main">
 				<div className="container">
+					<h1 className="text-display-lg-bold-56 text-primary text-center">
+						Movies
+					</h1>
 					<SearchInput
 						height="54px"
 						placeholder="Search Movie..."

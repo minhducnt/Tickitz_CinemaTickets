@@ -1,7 +1,7 @@
 export { default as ShowingComponent } from './ShowingMovie/ShowingMovie';
 export { default as ComingComponent } from './ComingMovie/ComingMovie';
-export { default as SubscribeComponent } from './Subscribe/SubscribeComponent';
 export { default as MovieDetailComponent } from './MovieDetail/MovieDetail';
+export { default as MovieDetailTmdb } from './MovieDetail/MovieDetailTmdb';
 export { default as ListMovies } from './MovieList/ListMovies';
 export { default as ListSearchMovies } from './MovieList/ListSearchMovies';
 export { default as AccountProfile } from './Profile/AccountProfile';

@@ -1,5 +1,3 @@
-import axiosClient from '../../shared/apis/axiosClient';
-
 export const requestPayment = () => {
 	return async (dispatch) => {
 		var session_url = 'https://api-m.sandbox.paypal.com/v1/oauth2/token';
@@ -60,8 +58,8 @@ export const createPayment = (token, total) => {
 					},
 				],
 				redirect_urls: {
-					return_url: 'http://localhost:3000/ticket-result',
-					cancel_url: 'http://localhost:3000/*',
+					return_url: 'https://utecinema.vercel.app/',
+					cancel_url: 'https://utecinema.vercel.app/*',
 				},
 			}),
 		})
