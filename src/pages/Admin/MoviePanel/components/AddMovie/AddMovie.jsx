@@ -97,7 +97,8 @@ class AddMovie extends Component {
 			image,
 			trailer,
 			moment(releases).format('DD-MM-YYYY'),
-			genres
+			genres,
+			display
 		);
 		this.props.movie.message !== ''
 			? toast.success(this.props.movie.message)
@@ -105,8 +106,16 @@ class AddMovie extends Component {
 	};
 
 	onUpdateMovie = async () => {
-		const { name, duration, description, image, trailer, releases, genres } =
-			this.state;
+		const {
+			name,
+			duration,
+			description,
+			image,
+			trailer,
+			releases,
+			genres,
+			display,
+		} = this.state;
 		await this.props.updateMovie(
 			this.props.edit.id,
 			name,
@@ -115,7 +124,8 @@ class AddMovie extends Component {
 			image,
 			trailer,
 			moment(releases).format('DD-MM-YYYY'),
-			genres
+			genres,
+			display
 		);
 		this.props.movie.message !== 'undefined'
 			? toast.success(this.props.movie.message)
@@ -145,14 +155,12 @@ class AddMovie extends Component {
 			display,
 		} = this.state;
 
-		console.log(this.state);
-
 		const rootClassName = classNames(classes.root, className);
 		const title = this.props.edit ? 'Edit Movie' : 'Add Movie';
 		const submitButton = this.props.edit ? 'Update Movie' : 'Save Details';
 		const submitAction = this.props.edit
-			? () => this.onUpdateMovie()
-			: () => this.onAddMovie();
+			? () => this.onUpdateMovie().then(() => window.location.reload())
+			: () => this.onAddMovie().then(() => window.location.reload());
 
 		return (
 			<div className={rootClassName}>
