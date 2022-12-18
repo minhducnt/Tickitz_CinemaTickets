@@ -88,8 +88,16 @@ class AddMovie extends Component {
 	};
 
 	onAddMovie = async () => {
-		const { name, duration, description, image, trailer, releases, genres } =
-			this.state;
+		const {
+			name,
+			duration,
+			description,
+			image,
+			trailer,
+			releases,
+			genres,
+			display,
+		} = this.state;
 		await this.props.addMovie(
 			name,
 			duration,
